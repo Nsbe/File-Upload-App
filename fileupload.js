@@ -20,6 +20,8 @@ var fs = require('fs');
 
 //If a file is being uploaded then move it to the folder on the server
 
+//Make sure it was uploaded successfully by checking the contents of the server folder?
+
 //If not, then give the user an error
 
 /*Additional options and Questions to Resolve:
