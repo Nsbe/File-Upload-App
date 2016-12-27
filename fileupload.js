@@ -9,3 +9,20 @@ of research and collaboration to complete this task on time.
 
 var express = require('express');
 var fs = require('fs');
+
+
+//Outline
+
+
+//Ask the user for a file (Listen for it?)
+
+//Check to make sure a file is being uploaded
+
+//If a file is being uploaded then move it to the folder on the server
+
+//If not, then give the user an error
+
+/*Additional options and Questions to Resolve:
+A progress bar?
+Do we need the NSBE site HTML?
+*/
