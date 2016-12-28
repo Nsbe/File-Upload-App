@@ -1,3 +1,4 @@
+//creates the directory for files to be uploaded
 Var fs  = require(“fs”);
 Var files = fs.readdirSync(‘./lib’);
 Console.log(files);
@@ -10,6 +11,7 @@ Console.log(“Loaded Documents”);
 }
 });
 
+//Allows the user to upload single or multiple uploads
 <input id="upload=input" type="file" name="uploads[]" multiple="multiple">
 #upload-input {
 display: none;
