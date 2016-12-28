@@ -7,12 +7,7 @@ Do not worry about storing the name into a database.  Using a flat file will wor
 of research and collaboration to complete this task on time.
 */
 
-var express = require('express');
-var fs = require('fs');
-
-
 //Outline
-
 
 //Ask the user for a file (Listen for it?)
 
@@ -28,3 +23,13 @@ var fs = require('fs');
 A progress bar?
 Do we need the NSBE site HTML?
 */
+
+var express = require('express');
+var app = express();
+var fs = require('fs');
+
+
+
+var server = app.listen(3000, function(){
+  console.log('Server listening on port 3000');
+});
