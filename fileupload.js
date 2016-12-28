@@ -7,26 +7,47 @@ Do not worry about storing the name into a database.  Using a flat file will wor
 of research and collaboration to complete this task on time.
 */
 
-//Outline
-
-//Ask the user for a file (Listen for it?)
-
-//Check to make sure a file is being uploaded
-
-//If a file is being uploaded then move it to the folder on the server
-
-//Make sure it was uploaded successfully by checking the contents of the server folder?
-
-//If not, then give the user an error
-
+//we need express for the framework and fs because we are working with files
 var express = require('express');
 var app = express();
 var fs = require('fs');
 
+//parses incoming requests in middleware and handles multi-part and form objects
+var bodyParser = require('body-parser');
+var multer  = require('multer');
+
+app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(multer({ dest: '/tmp/'}));
+
+//
+app.get('/index.htm', function (req, res) {
+   res.sendFile( __dirname + "/" + "index.htm" );
+})
+
+//the file is retrieved
 app.post('/file_upload', function (req, res) {
    console.log(req.files.file.name);
    console.log(req.files.file.path);
    console.log(req.files.file.type);
+   var file = __dirname + "/" + req.files.file.name;
+   
+   
+ fs.readFile( req.files.file.path, function (err, data) {
+      fs.writeFile(file, data, function (err) {
+         if( err ){ //if an error is thrown then give the user an error
+            console.log( err );
+            }else{  //otherwise the file has been uploaded successfully
+               response = {
+                  message:'File uploaded successfully',
+                  filename:req.files.file.name
+               };
+            }
+         console.log( response ); //succesful upload message given to user
+         res.end( JSON.stringify( response ) );
+      });
+   });
+})
 
 var server = app.listen(3000, function(){
   console.log('Server listening on port 3000');
