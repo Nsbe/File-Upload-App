@@ -1,4 +1,9 @@
-//creates the directory for files to be uploaded
+
+mkdir new-project
+cd new-project
+echo '{}' > package.json
+npm install some-package --save
+
 Var fs  = require(“fs”);
 Var files = fs.readdirSync(‘./lib’);
 Console.log(files);
