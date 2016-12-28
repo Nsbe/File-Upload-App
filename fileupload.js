@@ -1,3 +1,4 @@
+//To be used with index.htm
 /* Build a file upload app for the Chicago NSBE Website.  This app should be able to ask for a file from a users computer and then upload it 
 into a uniquely named folder on the server.
 
@@ -20,7 +21,7 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(multer({ dest: '/tmp/'}));
 
-//
+//creates a route to index html and sends the file there
 app.get('/index.htm', function (req, res) {
    res.sendFile( __dirname + "/" + "index.htm" );
 })
