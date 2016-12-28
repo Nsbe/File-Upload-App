@@ -19,11 +19,6 @@ of research and collaboration to complete this task on time.
 
 //If not, then give the user an error
 
-/*Additional options and Questions to Resolve:
-A progress bar?
-Do we need the NSBE site HTML?
-*/
-
 var express = require('express');
 var app = express();
 var fs = require('fs');
