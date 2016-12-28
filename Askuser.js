@@ -1,6 +1,7 @@
 var questions = [
-"What is your name?"'
+"What is your name?",
 "Name of file for upload?"
+  console.log(" ");
 ];
 
 var answers = [];
