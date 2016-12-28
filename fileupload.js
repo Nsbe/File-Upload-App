@@ -23,7 +23,10 @@ var express = require('express');
 var app = express();
 var fs = require('fs');
 
-
+app.post('/file_upload', function (req, res) {
+   console.log(req.files.file.name);
+   console.log(req.files.file.path);
+   console.log(req.files.file.type);
 
 var server = app.listen(3000, function(){
   console.log('Server listening on port 3000');
