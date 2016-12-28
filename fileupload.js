@@ -17,6 +17,7 @@ var fs = require('fs');
 var bodyParser = require('body-parser');
 var multer  = require('multer');
 
+//
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(multer({ dest: '/tmp/'}));
@@ -33,7 +34,7 @@ app.post('/file_upload', function (req, res) {
    console.log(req.files.file.type);
    var file = __dirname + "/" + req.files.file.name;
    
-   
+ //  
  fs.readFile( req.files.file.path, function (err, data) {
       fs.writeFile(file, data, function (err) {
          if( err ){ //if an error is thrown then give the user an error
