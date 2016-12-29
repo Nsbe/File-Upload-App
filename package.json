@@ -1,16 +1,27 @@
 {
   "name": "fileupload",
   "version": "6.9.2",
-  "description": "Used to upload files",
-  "authors": "Rachael Brooks and Lara Teagues",
+  "description": "an app used to upload files",
   "main": "fileupload.js",
-  "repository":{
-  "type": "git",
-  "url": "https://github.com/nsbeinterns/File-Upload-App"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "bugs": "app.use() requires middleware functions",
-  "dependencies": {
-  "express": "4.14.0"
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nsbeinterns/File-Upload-App.git"
+  },
+  "keywords": [
+    "upload",
+    "file",
+    "node",
+    "javascript"
+  ],
+  "author": "Rachael Brooks, Lara Teagues",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nsbeinterns/File-Upload-App/issues"
+  },
+  "homepage": "https://github.com/nsbeinterns/File-Upload-App#readme"
 }
+
 
