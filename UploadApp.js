@@ -49,6 +49,9 @@ text-align: center;
   border: none;
   }
   
+form(action="...", method="post", enctype="multipart/form-data")
+input(type="file", name="displayImage")
+
   var express = require('express');
  var app = express();
   
