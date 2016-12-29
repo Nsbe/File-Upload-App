@@ -6,6 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "dependencies":{
+    "multer": "1.2.1",
+    "express": "4.14.0",
+    "body-parser": "1.15.2"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nsbeinterns/File-Upload-App.git"
@@ -23,5 +28,3 @@
   },
   "homepage": "https://github.com/nsbeinterns/File-Upload-App#readme"
 }
-
-
