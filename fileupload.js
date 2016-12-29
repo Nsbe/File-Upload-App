@@ -20,7 +20,8 @@ var multer  = require('multer');
 //
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(multer({ dest: '/tmp/'}));
+var multer = require('multer');
+var tmp = multer({ dest: './tmp' });
 
 //creates a route to index html and sends the file there
 app.get('/index.htm', function (req, res) {
