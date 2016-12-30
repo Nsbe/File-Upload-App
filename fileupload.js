@@ -11,30 +11,33 @@ var express = require('express');
 var app = express();
 var fs = require('fs');
 
+
 //parses incoming requests in middleware and handles multi-part and form objects
 var bodyParser = require('body-parser');
 var multer  = require('multer');
+var storage =   multer.diskStorage({
+  destination: function (req, file, callback) {
+    callback(null, './uploads');
+  },
+  filename: function (req, file, callback) {
+    callback(null, file.fieldname + '-' + Date.now());
+  }
+});
 
 //do I have the right directory?
 app.use(express.static('public')); //now files in public directory can be loaded
 app.use(bodyParser.urlencoded({ extended: false })); //parses url encoded data with query string library ***
 var multer = require('multer');
-var uploaded = multer({ dest: '.public/uploaded' });
-
+var upload = multer({ storage: storage })
 //
 app.get('/index.htm', function (req, res) {
    res.sendFile( __dirname + "/" + "index.htm" );
 })
 
 // Possible Error Source?
-app.post('/fileupload', upload.single('file'), function (req, res) {
-  //  console.log(req.files.file.name); //gets information on the files name, path, and type
-  //  console.log(req.files.file.path);
-  //  console.log(req.files.file.type);
-   //var file = __dirname + "/" + req.files.file.name; //saves the file
-   //__dirname is the name of the directory that current script resides in
 
-  
+app.post('/fileupload', upload.single('file'), function (req, res) {
+   
  // 
  fs.readFile( req.files.file.path, function (err, data) {
       fs.writeFile(file, data, function (err) {
