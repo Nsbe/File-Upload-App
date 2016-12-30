@@ -1,15 +1,14 @@
-<!--This code is based heavily from https: //www.tutorialspoint.com/nodejs/nodejs_express_framework.htm revision may be necessary-->
-
 <html>
    <head>
-      <title>File Upload</title>
+      <title>File Uploading Form</title>
    </head>
 
-   <body>
-      <h3>File Upload:</h3>
+
+   <body style= "background-color: lightgoldenrodyellow;">
+      <h1>File Upload:</h1>
       Please select a file to upload: <br />
       
-      <form action = "http://127.0.0.1:3000/fileupload" method = "POST" 
+      <form action = "http://localhost:3000/fileupload" method = "POST" 
          enctype = "multipart/form-data">
          <input type="file" name="file" size="50" />
          <br />
@@ -17,4 +16,5 @@
       </form>
       
    </body>
+ 
 </html>
